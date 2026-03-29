@@ -1,6 +1,6 @@
 # ISO Prompt Builder (ISO 9001 / 14001 / 45001)
 
-A small Python app that generates high-quality GPT prompts for:
+A Python app that generates high-quality GPT prompts for:
 
 - **Documentation questions**
 - **Transcript analysis questions**
@@ -28,10 +28,13 @@ This app returns a ready-to-use prompt with strong constraints and output struct
   - `iso9001`
   - `iso14001`
   - `iso45001`
+- Includes:
+  - CLI mode
+  - Web app mode
 - Uses a versioned registry (`standards_registry.json`) so updates to standards can be made without code changes.
 - Includes a `refresh_registry` command to replace local registry data from an external JSON source.
 
-## Quickstart
+## Quickstart (CLI)
 
 ```bash
 python3 app.py generate \
@@ -41,13 +44,21 @@ python3 app.py generate \
   --clause 7.5
 ```
 
+## Quickstart (Web app)
+
+```bash
+python3 app.py web --host 127.0.0.1 --port 8000
+```
+
+Open `http://127.0.0.1:8000` in your browser.
+
 ## CLI usage
 
 ```bash
 python3 app.py --help
 ```
 
-Main options:
+Main options for `generate`:
 
 - `--standard`: `iso9001`, `iso14001`, or `iso45001`
 - `--mode`: `documentation`, `transcript`, `clause`
