@@ -1,0 +1,105 @@
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", Arial, sans-serif;
+  --bg: #f3f5f7;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #52606d;
+  --accent: #145ea8;
+  --accent-hover: #0f4d87;
+  --border: #d9e2ec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-top: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+select,
+textarea,
+button {
+  width: 100%;
+  margin-top: 0.45rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #bcccdc;
+  padding: 0.65rem 0.75rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 220px;
+  line-height: 1.45;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-weight: 700;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+.output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+#copy-btn {
+  width: auto;
+  margin: 0;
+  padding: 0.5rem 0.9rem;
+}
+
+pre {
+  background: #102a43;
+  color: #f0f4f8;
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.45;
+  min-height: 230px;
+}
