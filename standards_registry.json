@@ -1,0 +1,57 @@
+{
+  "standards": {
+    "iso9001": {
+      "title": "ISO 9001",
+      "edition": "2015",
+      "published_date": "2015-09-15",
+      "sources": [
+        "https://www.iso.org/standard/62085.html"
+      ],
+      "clauses": {
+        "4": "Context of the organization",
+        "5": "Leadership",
+        "6": "Planning",
+        "7": "Support",
+        "7.5": "Documented information",
+        "8": "Operation",
+        "9": "Performance evaluation",
+        "10": "Improvement"
+      }
+    },
+    "iso14001": {
+      "title": "ISO 14001",
+      "edition": "2015",
+      "published_date": "2015-09-15",
+      "sources": [
+        "https://www.iso.org/standard/60857.html"
+      ],
+      "clauses": {
+        "4": "Context of the organization",
+        "5": "Leadership",
+        "6": "Planning",
+        "6.1.2": "Environmental aspects",
+        "7": "Support",
+        "8": "Operation",
+        "9": "Performance evaluation",
+        "10": "Improvement"
+      }
+    },
+    "iso45001": {
+      "title": "ISO 45001",
+      "edition": "2018",
+      "published_date": "2018-03-12",
+      "sources": [
+        "https://www.iso.org/standard/63787.html"
+      ],
+      "clauses": {
+        "4": "Context of the organization",
+        "5": "Leadership and worker participation",
+        "6": "Planning",
+        "7": "Support",
+        "8": "Operation",
+        "9": "Performance evaluation",
+        "10": "Improvement"
+      }
+    }
+  }
+}
