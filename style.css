@@ -8,6 +8,8 @@
   --accent: #145ea8;
   --accent-hover: #0f4d87;
   --border: #d9e2ec;
+  --success: #1f7a3d;
+  --danger: #b42318;
 }
 
 * {
@@ -44,13 +46,31 @@ header p {
   margin-top: 1rem;
 }
 
-label {
-  display: block;
-  font-weight: 600;
-  margin-top: 1rem;
+ol {
+  padding-left: 1.2rem;
+  line-height: 1.5;
 }
 
-select,
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 0.7rem 0;
+}
+
+legend {
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-top: 0.55rem;
+}
+
+input[type="radio"] {
+  margin-right: 0.4rem;
+}
+
+input[type="text"],
 textarea,
 button {
   width: 100%;
@@ -63,7 +83,7 @@ button {
 
 textarea {
   resize: vertical;
-  min-height: 220px;
+  min-height: 180px;
   line-height: 1.45;
 }
 
@@ -72,7 +92,6 @@ button {
   color: white;
   border: none;
   font-weight: 700;
-  margin-top: 1rem;
   cursor: pointer;
 }
 
@@ -80,17 +99,56 @@ button:hover {
   background: var(--accent-hover);
 }
 
+.ghost {
+  background: #e4e7eb;
+  color: var(--text);
+}
+
+.ghost:hover {
+  background: #d5dae0;
+}
+
+.status {
+  font-weight: 700;
+  margin-top: 0.8rem;
+}
+
+.pass {
+  color: var(--success);
+}
+
+.fail {
+  color: var(--danger);
+}
+
+.hidden {
+  display: none;
+}
+
+.certificate {
+  margin-top: 1rem;
+  border: 1px dashed var(--accent);
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9fbfd;
+}
+
 .output-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.6rem;
+  margin-top: 1rem;
 }
 
-#copy-btn {
+.inline-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inline-actions button {
   width: auto;
   margin: 0;
-  padding: 0.5rem 0.9rem;
 }
 
 pre {
@@ -101,5 +159,5 @@ pre {
   white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.45;
-  min-height: 230px;
+  min-height: 220px;
 }

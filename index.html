@@ -3,47 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ISO Prompt Builder</title>
+    <title>Grounding Prompt Training Course</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="container">
       <header>
-        <h1>ISO 9001 / 14001 / 45001 Prompt Builder</h1>
+        <h1>Grounding Prompt Training Course</h1>
         <p>
-          Build high-quality prompts for audit-ready responses in clear UK English.
+          Learn how to ground GPT responses, test your understanding, and generate grounded prompts.
         </p>
       </header>
 
       <section class="panel">
-        <h2>Your Input</h2>
-        <form id="prompt-form">
-          <label for="input-type">Input type</label>
-          <select id="input-type" name="input-type">
-            <option value="question">Question</option>
-            <option value="clause">Clause</option>
-            <option value="source">Source material</option>
-          </select>
+        <h2>1) Course: How to Ground a GPT</h2>
+        <ol>
+          <li><strong>Define scope:</strong> state exactly what the model must answer and what is out of scope.</li>
+          <li><strong>Provide trusted sources:</strong> include policies, notes, reports, or approved facts.</li>
+          <li><strong>Set evidence rules:</strong> require the model to use only supplied material and cite it.</li>
+          <li><strong>Specify output format:</strong> choose bullet points, summary, table, or action list.</li>
+          <li><strong>Add uncertainty handling:</strong> instruct the model to say when evidence is missing.</li>
+          <li><strong>Review and refine:</strong> check for assumptions, then tighten instructions.</li>
+        </ol>
+        <button id="download-course-pdf" type="button">Download Course PDF Form</button>
+      </section>
 
-          <label for="user-input">Paste the question, clause, or source material</label>
-          <textarea
-            id="user-input"
-            name="user-input"
-            rows="12"
-            placeholder="Example: ISO 9001 Clause 8.5.1 - How does the company control production and service provision?"
-            required
-          ></textarea>
+      <section class="panel">
+        <h2>2) Knowledge Test</h2>
+        <form id="quiz-form">
+          <fieldset>
+            <legend>Q1. What is the first step in grounding?</legend>
+            <label><input type="radio" name="q1" value="a" required /> Add creative tone</label>
+            <label><input type="radio" name="q1" value="b" /> Define scope and boundaries</label>
+            <label><input type="radio" name="q1" value="c" /> Ask for random examples</label>
+          </fieldset>
 
-          <button type="submit">Generate Prompt</button>
+          <fieldset>
+            <legend>Q2. Grounded prompting should primarily use:</legend>
+            <label><input type="radio" name="q2" value="a" required /> External assumptions</label>
+            <label><input type="radio" name="q2" value="b" /> Model imagination</label>
+            <label><input type="radio" name="q2" value="c" /> Trusted provided sources</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Q3. If evidence is missing, the model should:</legend>
+            <label><input type="radio" name="q3" value="a" required /> Invent likely details</label>
+            <label><input type="radio" name="q3" value="b" /> Clearly state uncertainty</label>
+            <label><input type="radio" name="q3" value="c" /> Ignore the question</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Q4. A good grounded prompt includes:</legend>
+            <label><input type="radio" name="q4" value="a" required /> Output format requirements</label>
+            <label><input type="radio" name="q4" value="b" /> No constraints at all</label>
+            <label><input type="radio" name="q4" value="c" /> Contradictory instructions</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Q5. Why refine prompts after reviewing outputs?</legend>
+            <label><input type="radio" name="q5" value="a" required /> To reduce grounding quality</label>
+            <label><input type="radio" name="q5" value="b" /> To tighten instructions and remove assumptions</label>
+            <label><input type="radio" name="q5" value="c" /> To make answers longer only</label>
+          </fieldset>
+
+          <button type="submit">Submit Test</button>
         </form>
+
+        <p id="quiz-result" class="status" aria-live="polite"></p>
+
+        <div id="certificate" class="certificate hidden" aria-live="polite">
+          <h3>Certificate of Completion</h3>
+          <p>This certifies that <span id="student-name-display">Learner</span> passed the Grounding Prompt Training Course.</p>
+          <label for="student-name">Enter your name for certificate</label>
+          <input id="student-name" type="text" placeholder="Your full name" />
+          <button id="download-cert-pdf" type="button">Download Certificate PDF Form</button>
+        </div>
       </section>
 
       <section class="panel output-panel">
+        <h2>3) Grounding Prompt Action</h2>
+        <label for="user-prompt">Enter your prompt</label>
+        <textarea
+          id="user-prompt"
+          rows="8"
+          placeholder="Example: Explain our Q2 sales performance."
+        ></textarea>
+
+        <button id="ground-btn" type="button">Convert to Grounded Prompt</button>
+
         <div class="output-header">
-          <h2>Generated Prompt</h2>
-          <button id="copy-btn" type="button">Copy</button>
+          <h3>Grounded Prompt Output</h3>
+          <div class="inline-actions">
+            <button id="copy-btn" type="button">Copy</button>
+            <button id="clear-btn" type="button" class="ghost">Clear</button>
+          </div>
         </div>
-        <pre id="output" aria-live="polite">Your generated prompt will appear here.</pre>
+        <pre id="output" aria-live="polite">Your grounded prompt will appear here.</pre>
       </section>
     </main>
 
