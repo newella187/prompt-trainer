@@ -1,17 +1,15 @@
-# ISO Prompt Builder
+# Grounding Prompt Training Course
 
-A lightweight web app that generates high-quality prompts for ISO 9001, ISO 14001, and ISO 45001 audit-style responses.
+A lightweight web app to train users on grounding GPT prompts, test understanding, issue a certificate, and convert normal prompts into grounded prompts.
 
 ## Features
 
-- Accepts user input as a question, clause, or source material.
-- Builds a structured prompt with:
-  - fixed expert role,
-  - clear task,
-  - UK English context,
-  - evidence-based rules.
-- Replaces any use of the word "transcript" with "source material" in generated content.
-- One-click copy for the generated prompt.
+- Step-by-step training content explaining how to ground a GPT.
+- In-app knowledge quiz (5 questions) with pass/fail feedback.
+- Certificate section unlocked on passing score.
+- Downloadable PDF form for the course and downloadable certificate PDF form.
+- Grounding action area that converts user prompts into grounded prompts.
+- Copy and clear controls for generated grounded prompt output.
 
 ## Run locally
 
