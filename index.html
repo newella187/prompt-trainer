@@ -3,50 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ISO Prompt Builder</title>
+    <title>UK Climate Risk Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="container">
       <header>
-        <h1>ISO 9001 / 14001 / 45001 Prompt Builder</h1>
+        <h1>UK Climate Change Risk Map</h1>
         <p>
-          Build high-quality prompts for audit-ready responses in clear UK English.
+          Interactive UK map with Red / Amber / Green climate impact ratings and
+          clear risk type labels.
         </p>
       </header>
 
-      <section class="panel">
-        <h2>Your Input</h2>
-        <form id="prompt-form">
-          <label for="input-type">Input type</label>
-          <select id="input-type" name="input-type">
-            <option value="question">Question</option>
-            <option value="clause">Clause</option>
-            <option value="source">Source material</option>
-          </select>
-
-          <label for="user-input">Paste the question, clause, or source material</label>
-          <textarea
-            id="user-input"
-            name="user-input"
-            rows="12"
-            placeholder="Example: ISO 9001 Clause 8.5.1 - How does the company control production and service provision?"
-            required
-          ></textarea>
-
-          <button type="submit">Generate Prompt</button>
-        </form>
+      <section class="panel controls">
+        <h2>Filter by severity</h2>
+        <div class="filter-row" role="group" aria-label="Filter map markers by risk level">
+          <button class="chip active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="red" type="button">Red</button>
+          <button class="chip" data-filter="amber" type="button">Amber</button>
+          <button class="chip" data-filter="green" type="button">Green</button>
+        </div>
       </section>
 
-      <section class="panel output-panel">
-        <div class="output-header">
-          <h2>Generated Prompt</h2>
-          <button id="copy-btn" type="button">Copy</button>
+      <section class="panel">
+        <div class="monitor-header">
+          <h2>Daily monitoring</h2>
+          <button id="run-check-btn" type="button">Run daily check</button>
         </div>
-        <pre id="output" aria-live="polite">Your generated prompt will appear here.</pre>
+        <p id="monitor-status" class="muted"></p>
+        <ul id="change-log" class="change-log"></ul>
+      </section>
+
+      <section class="panel map-panel">
+        <h2>Map</h2>
+        <div id="map" aria-label="Map of UK climate risks"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Current risk points</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Severity</th>
+                <th>Risk</th>
+              </tr>
+            </thead>
+            <tbody id="risk-table-body"></tbody>
+          </table>
+        </div>
       </section>
     </main>
 
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
     <script src="app.js"></script>
   </body>
 </html>
