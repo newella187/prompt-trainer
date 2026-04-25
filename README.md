@@ -1,17 +1,15 @@
-# ISO Prompt Builder
+# UK Climate Change Risk Map
 
-A lightweight web app that generates high-quality prompts for ISO 9001, ISO 14001, and ISO 45001 audit-style responses.
+A lightweight web app that displays a map of the UK and marks example areas where climate change is affecting communities and ecosystems.
 
 ## Features
 
-- Accepts user input as a question, clause, or source material.
-- Builds a structured prompt with:
-  - fixed expert role,
-  - clear task,
-  - UK English context,
-  - evidence-based rules.
-- Replaces any use of the word "transcript" with "source material" in generated content.
-- One-click copy for the generated prompt.
+- Interactive UK map (Leaflet + OpenStreetMap tiles).
+- Red / Amber / Green marker system for risk severity.
+- Popups that identify the specific risk at each location.
+- Filter controls to show all points or a chosen severity level.
+- Daily monitoring snapshots saved in browser `localStorage`.
+- Change log that reports day-to-day differences in severity/risk entries.
 
 ## Run locally
 
